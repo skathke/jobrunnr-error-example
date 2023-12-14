@@ -1,0 +1,31 @@
+quarkus:
+  banner:
+    enabled: false
+  application:
+    name: jobrunr-exception-example
+  mongodb:
+    connection-string: "mongodb://localhost:27017/?uuidRepresentation=standard"
+    database: example
+  jobrunr:
+    background-job-server:
+      enabled: true
+    dashboard:
+      enabled: true
+
+"%dev":
+  quarkus:
+    jobrunr:
+      dashboard:
+        enabled: true
+      background-job-server:
+        enabled: true
+
+"%test":
+  quarkus:
+    jobrunr:
+      background-job-server:
+        enabled: true
+      dashboard:
+        enabled: true
+      job-scheduler:
+        enabled: true
